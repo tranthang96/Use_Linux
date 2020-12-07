@@ -1,0 +1,45 @@
+Software install on ubuntu
+( git , make, arm-compiler, ...)
+Tutorial Docker:
+1. Docker: ( https://docs.docker.com/engine/install/ubuntu/ )
+	Các bước thực hiện:
+	
+	package cần thiết: 
+		sudo apt-get install apt-transport-https
+		sudo apt-get install ca-certificates
+		sudo apt-get install curl
+		sudo apt-get install gnupg-agent
+		sudo apt-get install software-properties-common
+		
+		(apt-transport-https – giúp package manager chuyển file và data qua https
+		ca-certificates – giúp web browser và hệ thống kiểm tra certificate bảo mật
+		curl – chuyển data
+		software-properties-common – thêm script để quản lý software )
+	
+	Add Docker’s official GPG key:
+		curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+	
+	Cài đặt docker:
+		sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+		sudo apt update
+		
+		+ Đảm bảo rằng bạn đang cài từ Docker repo thay vì Ubuntu repo bằng lệnh sau:
+		
+		apt-cache policy docker-ce
+		
+		+ install docker: 
+		
+		sudo apt install docker-ce
+		
+		+ Sau khi cài đặt thành công, bạn nên kiểm tra lại, xác nhận lại trạng thái Docker bằng lệnh sau:
+		sudo systemctl status docker
+		
+		+ Sau khi cài đặt, bạn có thể cho user hiện tại thuộc group docker, để khi gõ lệnh không cần xin quyền sudo:
+
+		sudo usermod -aG docker $USER
+		
+		+ Ngoài ra khi sử dụng đến thành phần docker-compose thì bạn cài thêm
+
+		sudo apt install docker-compose
+		
+		
