@@ -1,0 +1,64 @@
+1. Kiểm tra phiên bản docker:
+	docker info
+	
+2. Kiểm tra image hiện đang có:
+	docker images -a
+	
+	Repository tên image trên kho chứa, ví dụ hệ điều hành CentOS có tên trên hub.docker.com là centos (xem centos)
+	TAG là phiên bản image, với giá trị latest có nghĩa là bản cuối. Muốn tải về bản khác latest vào mục TAGS trên hub.docker.com tìm bản phù hợp.
+	IMAGE ID một chuỗi định danh duy nhất (tên) của image trên hệ thống của bạn.
+3. Để tải một image:
+	docker pull nameimage:tag
+	
+	#Hoặc tải về bản cuối 
+	docker pull nameimage
+	
+4. Kiểm tra có các container nào đang chạy:
+	docker ps
+	
+5. Liệt kê các container:
+	docker container ls --all
+	
+	Các container bạn đã tạo, liệt kê ra hãy chú ý mấy thứ
+
+	CONTAINER ID một con số (mã hash) gán cho container, bạn dùng mã này để quản lý container này, như xóa bỏ, khởi động, dừng lại ...
+	IMAGE cho biết container sinh ra từ image nào.
+	COMMAND cho biết lệnh, ứng dụng chạy khi container chạy (/bin/bash là terminate)
+	STATUS cho biết trạng thái, (exit - đang dừng)
+	
+6. Để tạo và chạy một container theo cú pháp sau:
+
+	docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+	
+	[OPTIONS] các thiết lập khi tạo container, có rất nhiều thiết lập tùy mục đích tạo container, sẽ tìm hiểu các thiết lập qua từng trường hợp cụ thể.
+	IMAGE tên image hoặc ID của image từ nó sinh ra container.
+	[COMMAND] [ARG...] lệnh và tham số khi container chạy.
+	
+	vd : docker run -it ubuntu
+	-it :
+	-t : nó có nghĩa là console, cho phép kết nối với terminal để tương tác
+	-i : có nghĩa là duy trì mở stdin để nhập lệnh.
+7. Một vài tham số khác:
+	Tạo và chạy container, container tự xóa khi kết thúc thì thêm vào tham số --rm
+
+	docker run -it --rm ubuntu
+	Tạo và chạy container - khi container chạy thi hành ngay một lệnh nào đó, ví dụ ls -la
+
+	docker run -it --rm debian ls -la
+	
+	Tạo và chạy container - ánh xạ một thự mục máy host vào một thư mục container, chia sẻ dữ liệu
+
+	docker run -it --rm -v path-in-host:path-in-container debian
+8. Vào container đang chạy
+	docker container attach containerid
+	
+9. Chạy một container đang dừng
+
+	docker container start -i containerid
+10.Nếu cần xóa bỏ hẳn một container thì dùng lệnh
+
+	docker container rm containerid
+	
+	
+#thoát termial vẫn giữ container đang chạy
+CTRL +P, CTRL + Q
