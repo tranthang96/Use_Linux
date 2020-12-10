@@ -1,0 +1,12 @@
+Các bước cài stm32:
+
+1. sudo apt install stlink-tools
+2. sudo apt install openocd
+3. arm compiler
+	download arm-compiler
+	add path ~/.bashrc
+	export PATH=$PATH:/opt/arm-compiler/bin
+
+4. libopencm3
+5.
+

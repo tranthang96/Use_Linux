@@ -1,0 +1,26 @@
+Các lệnh trong docker:
+1. Lưu một container thành 1 image:
+	docker commit mycontainer myimage:version
+
+VD : Thuc hanh tao mot ubuntu server tren docker
+
+b1: pull ubuntu
+	docker pull ubuntu:lastest
+	
+b2: khoi chay ubuntu
+	docker run -it --name U1 -h ubuntu1 ubuntu
+	 --name : tên container 
+	 -h : host (vd sau cai dat root@host)
+
+Ctrl + P, Ctrl + Q de thoat...
+
+thi hanh lenh trong container:
+vd chay lennh ls trong container U1
+
+	docker exec U1 ls
+	
+2. xem có container nào đang chạy
+	docker ps
+	
+3. Khởi chạy lại container đang dừng
+	docker container start -i container_id

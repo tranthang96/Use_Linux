@@ -1,0 +1,13 @@
+Tìm kiếm image từ docker:
+C1:
+	Tìm kiếm trên website: https://hub.docker.com/
+
+C2: Tìm kiếm qua dòng lệnh.
+	docker search Name_image
+
+Tải image:
+	docker pull name_image:phiên_bản
+	
+Xóa image:
+	docker image rm ubuntu:latest
+	

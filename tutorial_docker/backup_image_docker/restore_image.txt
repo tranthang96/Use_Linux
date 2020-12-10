@@ -1,0 +1,7 @@
+restore image docker:
+
+1. 
+	docker load -i đường_dẫn_file_backup
+	
+2. đặt tên image:
+	docker tag image_id tên_image:version

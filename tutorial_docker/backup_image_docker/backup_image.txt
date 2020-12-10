@@ -1,0 +1,10 @@
+Các bước backup container:
+B1: Container phải ở trạng thái dừng
+	kiểm tra: docker ps -a
+B2: Không chứa tên image định tạo:
+	kiểm tra: docker images
+B3: back up container:
+	C1: docker commit id_container tên_image_backup:phiên_bản
+	C2: docker commit Name_container tên_image_backup:phiên_bản
+B4: save thành file:
+	docker save --output myimage.tar image_id
