@@ -1,0 +1,6 @@
+kiểm tra mạng trong docker:
+	docker network ls
+	
+
+1. Kiểm tra network trên docker với busybox
+B1: Chạy busybox

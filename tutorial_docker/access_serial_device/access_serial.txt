@@ -1,0 +1,2 @@
+Hướng dẫn cấp quyền thiết bị host cho docker:
+https://www.losant.com/blog/how-to-access-serial-devices-in-docker
