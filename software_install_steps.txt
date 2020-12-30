@@ -42,4 +42,5 @@ Tutorial Docker:
 
 		sudo apt install docker-compose
 		
+		https://linuxconfig.org/how-to-install-docker-compose-on-ubuntu-20-04-focal-fossa-linux
 		
